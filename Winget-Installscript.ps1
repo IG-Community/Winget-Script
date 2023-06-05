@@ -9,7 +9,7 @@ $host.ui.RawUI.WindowTitle = "Winget-Install Software"
 
 #Adding apps to install! (You can edit this part)
     $apps = @(
-        @{name = "7zip.7zip" },
+        @{name = "M2Team.NanaZip" },
         @{name = "Mozilla.Firefox" },
         @{name = "Google.Chrome" },
         @{name = "Mozilla.Thunderbird" },
