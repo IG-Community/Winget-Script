@@ -16,7 +16,7 @@ The script supports the installation of the following software:
 4. Mozilla Thunderbird
 5. VLC Media Player
 6. Adobe Acrobat Reader DC
-7. Oracle Java Runtime Environment (optional)
+7. Oracle Java Runtime Environment
 
 The script checks if the respective software is already installed on the system and skips the installation if it is detected.
 Otherwise, the script installs the software unnoticed.
@@ -54,7 +54,7 @@ Das Skript unterstützt die Installation der folgenden Software:
 4. Mozilla Thunderbird
 5. VLC-Media Player
 6. Adobe Acrobat Reader DC
-7. Oracle Java Runtime Environment (optional)
+7. Oracle Java Runtime Environment
 
 Das Skript prüft, ob die jeweilige Software bereits auf dem System installiert ist, und überspringt die Installation, wenn sie erkannt wird.
 Andernfalls installiert das Script die Software unbemerkt.
