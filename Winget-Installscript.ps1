@@ -14,7 +14,7 @@ $desiredHeight = 30
         @{name = "Mozilla.Thunderbird" },
         @{name = "VideoLAN.VLC" },		
         @{name = "Adobe.Acrobat.Reader.64-bit"},
-	    @{name = "Oracle.JavaRuntimeEnvironment"}
+	@{name = "Oracle.JavaRuntimeEnvironment"}
     );
 
 #=====================================================
