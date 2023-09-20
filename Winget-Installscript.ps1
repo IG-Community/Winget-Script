@@ -29,6 +29,7 @@ Write-Host "                      ________                .__
                               \/     \/|__|               \/         \/                      v4.5.0" -ForegroundColor Red
 
 function InstallWinget {
+
     Clear-Host
     Invoke-Command -ScriptBlock $Display
     Write-Host " ══╦═══════════════════════════════════════════════════════════════════════════════════════════════╦══" -ForegroundColor Yellow
@@ -121,7 +122,7 @@ function InstallWinget {
                     Start-Sleep 2
                     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
                     $releases = Invoke-RestMethod -uri $releases_url
-                    $latestRelease = $releases.assets | Where { $_.browser_download_url.EndsWith('msixbundle') } | Select -First 1
+                    $latestRelease = $releases.assets | Where-Object { $_.browser_download_url.EndsWith('msixbundle') } | Select-Object -First 1
                     Add-AppxPackage -Path $latestRelease.browser_download_url			    
                     Write-Host "   ║                                                                                               ║" -ForegroundColor Yellow
                     Write-Host "   ╚═══════════════════════════════════════════════════════════════════════════════════════════════╝" -ForegroundColor Yellow
@@ -189,23 +190,31 @@ function menu {
     Write-Host "║" -ForegroundColor Yellow
     Write-Host "               ║                                                                       ║" -ForegroundColor Yellow
     Write-Host "               ║" -ForegroundColor Yellow -NoNewLine
-    Write-Host "    2: Installation der Software mit Java                              " -ForegroundColor Cyan -NoNewLine
+    Write-Host "    2: Installation der Software ohne Java und Thunderbird             " -ForegroundColor Cyan -NoNewLine
+    Write-Host "║" -ForegroundColor Yellow
+    Write-Host "               ║                                                                       ║" -ForegroundColor Yellow
+    Write-Host "               ║" -ForegroundColor Yellow -NoNewLine
+    Write-Host "    3: Installation der Software mit Java                              " -ForegroundColor Cyan -NoNewLine
+    Write-Host "║" -ForegroundColor Yellow
+    Write-Host "               ║                                                                       ║" -ForegroundColor Yellow
+    Write-Host "               ║" -ForegroundColor Yellow -NoNewLine
+    Write-Host "    4: Installation der Software mit Java aber ohne Thunderbird        " -ForegroundColor Cyan -NoNewLine
     Write-Host "║" -ForegroundColor Yellow
     Write-Host "               ║                                                                       ║" -ForegroundColor Yellow
     Write-Host "               ╠═══════════════════════════════════════════════════════════════════════╣" -ForegroundColor Yellow
     Write-Host "               ║                                                                       ║" -ForegroundColor Yellow
     Write-Host "               ║" -ForegroundColor Yellow -NoNewLine
-    Write-Host "    0: Beenden                                            2: Readme    " -ForegroundColor Magenta -NoNewLine
+    Write-Host "    0: Beenden                                            5: Readme    " -ForegroundColor Magenta -NoNewLine
     Write-Host "║" -ForegroundColor Yellow
     Write-Host "               ║                                                                       ║" -ForegroundColor Yellow
     Write-Host "               ╚═══════════════════════════════════════════════════════════════════════╝" -ForegroundColor Yellow
     Write-Host
 
     $actions = "0"
-    while ($actions -notin "0..3") {
-    $actions = Read-Host -Prompt '                   Was möchten Sie tun? ( 0 | 1 | 2 | 3 )'
+    while ($actions -notin "0..5") {
+    $actions = Read-Host -Prompt '                    Was möchten Sie tun? ( 1 | 2 | 3 | 4 )'
 
-        if ($actions -in 0..3) {
+        if ($actions -in 0..5) {
             if ($actions -eq 0) {
                 exit
               }
@@ -224,7 +233,6 @@ function menu {
                 $apps = @(
                     @{name = "Mozilla.Firefox" },
                     @{name = "Google.Chrome" },
-                    @{name = "Mozilla.Thunderbird" },
                     @{name = "VideoLAN.VLC" },		
                     @{name = "Adobe.Acrobat.Reader.64-bit"},
                     @{name = "Oracle.JavaRuntimeEnvironment"}
@@ -233,6 +241,29 @@ function menu {
               }
 
               if ($actions -eq 3) {
+                $apps = @(
+                    @{name = "Mozilla.Firefox" },
+                    @{name = "Google.Chrome" },
+                    @{name = "Mozilla.Thunderbird" },
+                    @{name = "VideoLAN.VLC" },		
+                    @{name = "Adobe.Acrobat.Reader.64-bit"},
+                    @{name = "Oracle.JavaRuntimeEnvironment"}
+                );
+                InstallWinget
+              }
+              
+              if ($actions -eq 4) {
+                $apps = @(
+                    @{name = "Mozilla.Firefox" },
+                    @{name = "Google.Chrome" },
+                    @{name = "VideoLAN.VLC" },		
+                    @{name = "Adobe.Acrobat.Reader.64-bit"},
+                    @{name = "Oracle.JavaRuntimeEnvironment"}
+                );
+                InstallWinget
+              }              
+
+              if ($actions -eq 5) {
                   Clear-Host
                   Start-Process "https://github.com/IG-Community/Winget-Script#README"
                   menu
