@@ -1,4 +1,7 @@
-# Winget-Script
+
+![Winget](https://github.com/SD-ITLab/Winget-Script/assets/30149483/3f946c90-1f9e-4dc5-b231-ae5c023ec8f0)
+
+# English:
 
 # Winget Installer | Unattended Script
 
@@ -10,13 +13,41 @@ With "winget", users can install and manage software from the Microsoft Store, a
 It provides the ability to install the software to be installed without any user interaction.
 The script supports the installation of the following software:
 
-1. NanaZip
-2. Mozilla Firefox
-3. Google Chrome
-4. Mozilla Thunderbird
-5. VLC Media Player
-6. Adobe Acrobat Reader DC
-7. Oracle Java Runtime Environment
+## Packages
+- Mozilla Firefox
+- Google Chrome
+- Mozilla Thunderbird
+- VLC Media Player
+- Adobe Acrobat Reader DC
+- Oracle Java Runtime Environment
+
+# Documents
+- LibreOffice
+- Apache OpenOffice
+- Notepad++
+- PDF24 Creator
+
+## Tools
+- 7Zip
+- PeaZip
+- Everything
+- Thunderbird
+- Oracle Runtime Java 8
+- Adobe Reader DC
+- VLC-Media Player
+- Malwarebytes
+
+## Remote
+- TeamViewer
+- AnyDesk
+- RustDesk
+
+## Browser
+- Google Chrome
+- Mozilla Firefox
+- Brave
+- Opera
+- Opera GX
 
 The script checks if the respective software is already installed on the system and skips the installation if it is detected.
 Otherwise, the script installs the software unnoticed.
@@ -48,13 +79,41 @@ Mit "winget" können Benutzer Software aus dem Microsoft Store, aber auch aus an
 Es bietet die möglichkeit, die zu installierende Software ohne jegliche Benutzerinteraktion zu installieren
 Das Skript unterstützt die Installation der folgenden Software:
 
-1. NanaZip
-2. Mozilla Firefox
-3. Google Chrome
-4. Mozilla Thunderbird
-5. VLC-Media Player
-6. Adobe Acrobat Reader DC
-7. Oracle Java Runtime Environment
+## Packages
+- Mozilla Firefox
+- Google Chrome
+- Mozilla Thunderbird
+- VLC Media Player
+- Adobe Acrobat Reader DC
+- Oracle Java Runtime Environment
+
+# Documents
+- LibreOffice
+- Apache OpenOffice
+- Notepad++
+- PDF24 Creator
+
+## Tools
+- 7Zip
+- PeaZip
+- Everything
+- Thunderbird
+- Oracle Runtime Java 8
+- Adobe Reader DC
+- VLC-Media Player
+- Malwarebytes
+
+## Remote
+- TeamViewer
+- AnyDesk
+- RustDesk
+
+## Browser
+- Google Chrome
+- Mozilla Firefox
+- Brave
+- Opera
+- Opera GX
 
 Das Skript prüft, ob die jeweilige Software bereits auf dem System installiert ist, und überspringt die Installation, wenn sie erkannt wird.
 Andernfalls installiert das Script die Software unbemerkt.
