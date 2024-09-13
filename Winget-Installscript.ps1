@@ -14,7 +14,7 @@ Write-Host "        __      __.__                       __                ______
         \        /|  |   |  \/ /_/  >  ___/|  |    /_____/   /        \  ___/|  | |  |  /  |_> >
          \__/\  / |__|___|  /\___  / \___  >__|             /_______  /\___  >__| |____/|   __/ 
               \/          \//_____/      \/                         \/     \/           |__|    " -ForegroundColor Cyan
-Write-Host "   @sd-itlab.de                                                                               v5.0.0" -ForegroundColor Red
+Write-Host "   @sd-itlab.de                                                                               v5.5.0" -ForegroundColor Red
 }
 
 #Abschlussvariable, wenn der Installationsprozess abgeschlossen ist.
@@ -44,34 +44,34 @@ function InstallWinget {
     Write-Host "║" -ForegroundColor Yellow
 
                 #Abhängigkeitsprüfung
-                #Prüft, ob Microsoft UI Xaml 2.7.3 installiert ist, wenn nicht, dann installieren dies
-                $Xaml = Get-AppxPackage -Name 'Microsoft.UI.Xaml.2.7'
-                $XamlMinimumVersion = [version]"7.2208.15002.0"
+                #Prüft, ob Microsoft UI Xaml 2.8.6 installiert ist, wenn nicht, dann installieren dies
+                $Xaml = Get-AppxPackage -Name 'Microsoft.UI.Xaml.2.8'
+                $XamlMinimumVersion = [version]"8.2310.30001.0"
                 if ($Xaml.Version -lt $XamlMinimumVersion) {
     
                     Write-Host "   ║                                                                                               ║" -ForegroundColor Yellow
                     Write-Host "   ║" -ForegroundColor Yellow -NoNewLine
-                    Write-Host "     Installiere Abhängigkeit: Mircosoft UI Xaml 2.7...                                        " -ForegroundColor Red -NoNewLine
+                    Write-Host "     Installiere Abhängigkeit: Mircosoft UI Xaml 2.8...                                        " -ForegroundColor Red -NoNewLine
                     Write-Host "║" -ForegroundColor Yellow
     
                     New-Item C:\Windows\Temp\Winget -ItemType directory | Out-Null
-                    Invoke-WebRequest -Uri 'https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.7.3' -OutFile C:\Windows\Temp\Winget\microsoft.ui.xaml.2.7.3.zip
-                    Expand-Archive C:\Windows\Temp\Winget\microsoft.ui.xaml.2.7.3.zip -DestinationPath C:\Windows\Temp\Winget\microsoft.ui.xaml.2.7.3 | Out-Null
-                    Add-AppxPackage -Path 'C:\Windows\Temp\Winget\microsoft.ui.xaml.2.7.3\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.7.appx' | Out-Null
+                    Invoke-WebRequest -Uri 'https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.8.6' -OutFile C:\Windows\Temp\Winget\microsoft.ui.xaml.2.8.6.zip
+                    Expand-Archive C:\Windows\Temp\Winget\microsoft.ui.xaml.2.8.6.zip -DestinationPath C:\Windows\Temp\Winget\microsoft.ui.xaml.2.8.6 | Out-Null
+                    Add-AppxPackage -Path 'C:\Windows\Temp\Winget\microsoft.ui.xaml.2.8.6\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.8.appx' | Out-Null
                     Remove-Item 'C:\Windows\Temp\Winget' -Recurse | Out-Null
                     }
     
                     else {
                     Write-Host "   ║                                                                                               ║" -ForegroundColor Yellow
                     Write-Host "   ║" -ForegroundColor Yellow -NoNewLine
-                    Write-Host "     Abhängigkeit: Mircosoft UI Xaml 2.7 ist bereits installiert...                            " -ForegroundColor Green -NoNewLine
+                    Write-Host "     Abhängigkeit: Mircosoft UI Xaml 2.8 ist bereits installiert...                            " -ForegroundColor Green -NoNewLine
                     Write-Host "║" -ForegroundColor Yellow
                     }
 
                 #Abhängigkeitsprüfung
                 #Prüfen, ob Microsoft VCLibs X64 140.00 installiert ist, wenn nicht, dann installieren dies
                 $VCLibs = Get-AppxPackage -Name 'Microsoft.VCLibs.140.00.UWPDesktop'
-                $VCLibsminimumVersion = [version]"14.0.32530.0"
+                $VCLibsminimumVersion = [version]"14.0.33519.0"
                 if ($VCLibs -and $VCLibs.Version -lt $VCLibsminimumVersion) {
     
                     Write-Host "   ║                                                                                               ║" -ForegroundColor Yellow
@@ -101,7 +101,7 @@ function InstallWinget {
 
                 #Prüfen, ob Microsoft DesktopAppInstaller (Winget) installiert ist, wenn nicht, dann installieren dies
                 $Winget = Get-AppxPackage -name 'Microsoft.DesktopAppInstaller'
-                if ($Winget.Version -ge [version]"1.21.0.0") {
+                if ($Winget.Version -ge [version]"1.23.0.0") {
                     Write-Host "   ║" -ForegroundColor Yellow -NoNewLine
                     Write-Host "     Winget ist bereits Installiert...                                                         " -ForegroundColor Green -NoNewLine
                     Write-Host "║" -ForegroundColor Yellow
@@ -219,16 +219,16 @@ function menu {
     Write-Host "     DOCUMENTS           TOOLS                                         " -ForegroundColor Magenta -NoNewline  
     Write-Host "║" -ForegroundColor Yellow
     Write-Host "               ║"-ForegroundColor Yellow -NoNewline
-    Write-Host "     05: LibreOffice      9: 7Zip              13: Oracle Java  8      " -ForegroundColor Cyan -NoNewline
+    Write-Host "      5: LibreOffice      9: 7Zip              13: Oracle Java  8      " -ForegroundColor Cyan -NoNewline
     Write-Host "║" -ForegroundColor Yellow
     Write-Host "               ║"-ForegroundColor Yellow -NoNewline 
-    Write-Host "     06: OpenOffice      10: PeaZip            14: Adobe Reader DC     " -ForegroundColor Cyan -NoNewline
+    Write-Host "      6: OpenOffice      10: PeaZip            14: Adobe Reader DC     " -ForegroundColor Cyan -NoNewline
     Write-Host "║" -ForegroundColor Yellow
     Write-Host "               ║"-ForegroundColor Yellow -NoNewline 
-    Write-Host "     07: Notepad++       11: Everything        15: VLC-Media Player    " -ForegroundColor Cyan -NoNewline
+    Write-Host "      7: Notepad++       11: Everything        15: VLC-Media Player    " -ForegroundColor Cyan -NoNewline
     Write-Host "║" -ForegroundColor Yellow
     Write-Host "               ║"-ForegroundColor Yellow -NoNewline 
-    Write-Host "     08: PDF24 Creator   12: Thunderbird       16: Malwarebytes        " -ForegroundColor Cyan -NoNewline
+    Write-Host "      8: PDF24 Creator   12: Thunderbird       16: Malwarebytes        " -ForegroundColor Cyan -NoNewline
     Write-Host "║" -ForegroundColor Yellow
     Write-Host "               ║                                                                       ║"
     Write-Host "               ║"-ForegroundColor Yellow -NoNewline
@@ -246,14 +246,8 @@ function menu {
     Write-Host "               ║                                                                       ║" -ForegroundColor Yellow
     Write-Host "               ╠═══════════════════════════════════════════════════════════════════════╣" -ForegroundColor Yellow
     Write-Host "               ║                                                                       ║" -ForegroundColor Yellow
-    Write-Host "               ║"-ForegroundColor Yellow -NoNewline 
-    Write-Host "     30: Alle Programme via Winget Aktuallisieren                      " -ForegroundColor Cyan -NoNewline
-    Write-Host "║" -ForegroundColor Yellow
-    Write-Host "               ║                                                                       ║" -ForegroundColor Yellow
-    Write-Host "               ╠═══════════════════════════════════════════════════════════════════════╣" -ForegroundColor Yellow
-    Write-Host "               ║                                                                       ║" -ForegroundColor Yellow
     Write-Host "               ║" -ForegroundColor Yellow -NoNewLine
-    Write-Host "    0: Beenden                                           31: Readme    " -ForegroundColor Magenta -NoNewLine
+    Write-Host "    0: Beenden                                           30: Readme    " -ForegroundColor Magenta -NoNewLine
     Write-Host "║" -ForegroundColor Yellow
     Write-Host "               ║                                                                       ║" -ForegroundColor Yellow
     Write-Host "               ╚═══════════════════════════════════════════════════════════════════════╝" -ForegroundColor Yellow
@@ -266,32 +260,8 @@ function menu {
         }
 
         if ($actions -eq 30) {
-            #Prüfe und Aktualisiere verfügbare Programme mit Winget upgrade
-            InstallWinget
             Clear-Host
-            Invoke-Command -ScriptBlock $Display
-            Write-Host " ══╦═══════════════════════════════════════════════════════════════════════════════════════════════╦══" -ForegroundColor Yellow
-            Write-Host "   ╠══════════════════════════════════" -ForegroundColor Yellow -NoNewline
-            Write-Host "  Windows Package Manager  " -ForegroundColor White -NoNewline
-            Write-Host "══════════════════════════════════╣" -ForegroundColor Yellow
-            Write-Host "   ║                                                                                               ║" -ForegroundColor Yellow
-            Write-Host "   ║" -ForegroundColor Yellow -NoNewLine
-            Write-Host "                 Verfügbare Programme werden über Winget Aktualisiert...                       " -ForegroundColor Magenta -NoNewLine
-            Write-Host "║" -ForegroundColor Yellow
-            Write-Host "   ║" -ForegroundColor Yellow -NoNewLine
-            Write-Host "                 Dies wird einige Minuten dauern... Bitte Warten                               " -ForegroundColor Magenta -NoNewLine
-            Write-Host "║" -ForegroundColor Yellow
-            winget upgrade --all --silent | Out-Null
-            Invoke-Command -ScriptBlock $End
-            Start-Sleep 2
-            menu
-        }
-
-
-        if ($actions -eq 31) {
-            #Zeige die Github Seite von diesem Code
-            Clear-Host
-            Start-Process "https://github.com/SD-ITLab/Winget-Script"
+            Start-Process "https://sd-itlab.de/winget/"
             menu
         }
 
