@@ -219,13 +219,13 @@ function menu {
     Write-Host "     DOCUMENTS           TOOLS                                         " -ForegroundColor Magenta -NoNewline  
     Write-Host "║" -ForegroundColor Yellow
     Write-Host "               ║"-ForegroundColor Yellow -NoNewline
-    Write-Host "      5: LibreOffice      9: 7Zip              13: Oracle Java  8      " -ForegroundColor Cyan -NoNewline
+    Write-Host "      5: LibreOffice      9: Notepad++         13: Oracle Java  8      " -ForegroundColor Cyan -NoNewline
     Write-Host "║" -ForegroundColor Yellow
     Write-Host "               ║"-ForegroundColor Yellow -NoNewline 
-    Write-Host "      6: OpenOffice      10: PeaZip            14: Adobe Reader DC     " -ForegroundColor Cyan -NoNewline
+    Write-Host "      6: OpenOffice      10: 7Zip              14: Adobe Reader DC     " -ForegroundColor Cyan -NoNewline
     Write-Host "║" -ForegroundColor Yellow
     Write-Host "               ║"-ForegroundColor Yellow -NoNewline 
-    Write-Host "      7: Notepad++       11: Everything        15: VLC-Media Player    " -ForegroundColor Cyan -NoNewline
+    Write-Host "      7: OnlyOffice      11: Everything        15: VLC-Media Player    " -ForegroundColor Cyan -NoNewline
     Write-Host "║" -ForegroundColor Yellow
     Write-Host "               ║"-ForegroundColor Yellow -NoNewline 
     Write-Host "      8: PDF24 Creator   12: Thunderbird       16: Malwarebytes        " -ForegroundColor Cyan -NoNewline
@@ -295,10 +295,10 @@ function Install-List {
                      '4' { $selectedApps += "Mozilla.Firefox", "Google.Chrome", "VideoLAN.VLC", "Adobe.Acrobat.Reader.64-bit", "Oracle.JavaRuntimeEnvironment" }
                      '5' { $selectedApps += "TheDocumentFoundation.LibreOffice" }
                      '6' { $selectedApps += "Apache.OpenOffice" }
-                     '7' { $selectedApps += "Notepad++.Notepad++" }
+                     '7' { $selectedApps += "ONLYOFFICE.DesktopEditors" }
                      '8' { $selectedApps += "geeksoftwareGmbH.PDF24Creator" }
-                     '9' { $selectedApps += "7zip.7zip" }
-                    '10' { $selectedApps += "Giorgiotani.Peazip" }
+                     '9' { $selectedApps += "Notepad++.Notepad++" }
+                    '10' { $selectedApps += "7zip.7zip" }
                     '11' { $selectedApps += "voidtools.Everything" }
                     '12' { $selectedApps += "Mozilla.Thunderbird" }
                     '13' { $selectedApps += "Oracle.JavaRuntimeEnvironment" }
