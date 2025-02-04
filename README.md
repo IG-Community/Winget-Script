@@ -75,3 +75,78 @@ Dieses Skript bietet eine unbeaufsichtigte Installation von Softwarepaketen ohne
 
 **Bei Fragen oder Support wenden Sie sich bitte an den Skriptautor.**
 
+---
+
+# ENGLISH
+
+# Winget Installer | Unattended Script
+
+## ✨ Description
+
+**winget** is Microsoft's official package manager for Windows 10 and later versions. It enables automated installation, updating, and uninstallation of applications via the command line. With **winget**, users can install and manage software from the Microsoft Store as well as other sources like community repositories.
+
+This script provides an unattended installation of software packages without any user interaction.
+
+---
+
+## 📚 Supported Software
+
+### 🌍 **Browsers**
+- Google Chrome
+- Mozilla Firefox
+- Brave
+- Opera
+- Opera GX
+
+### 📝 **Documents & PDF**
+- LibreOffice
+- OnlyOffice
+- Apache OpenOffice
+- Notepad++
+- PDF24 Creator
+- Adobe Acrobat Reader DC
+
+### ⚙️ **Tools & Utilities**
+- 7-Zip
+- PeaZip
+- Everything
+- VLC Media Player
+- Malwarebytes
+
+### 🛡 **Security & Remote Management**
+- TeamViewer
+- AnyDesk
+- RustDesk
+
+### 📼 **Multimedia**
+- VLC Media Player
+
+### 💻 **Email & Communication**
+- Mozilla Thunderbird
+
+### 💡 **Java Runtime Environments**
+- Oracle Java Runtime Environment 8
+
+---
+
+## ✅ Functionality
+
+- The script checks whether the respective software is already installed on the system and skips the installation if detected.
+- If the software is not present, it will be silently installed in the background.
+
+---
+
+## 🔧 Usage
+
+1. **Run the Winget script as an administrator** (directly or via **"PowerShell in Batch"**).
+2. The script installs the predefined applications in the background without requiring user interaction.
+3. A confirmation message is displayed upon completion of the installation process.
+
+---
+
+## ⚠️ Notes
+
+- This script depends on the availability of the respective applications and their dependencies. It is recommended to ensure that the mentioned versions are up to date.
+- The script can be customized to add additional functionalities or modify the installation process.
+
+**For any questions or support, please contact the script author.**
