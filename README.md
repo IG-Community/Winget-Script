@@ -1,7 +1,7 @@
 
 ![Winget](https://github.com/SD-ITLab/Winget-Script/assets/30149483/3f946c90-1f9e-4dc5-b231-ae5c023ec8f0)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://badgen.net/github/license/SD-ITLab/Winget-Script)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://badgen.net/github/license/SD-ITLab/Winget-Script)
 
 # Winget Installer | Unattended Script
 
